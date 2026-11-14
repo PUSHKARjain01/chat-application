@@ -1,0 +1,299 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f2f2f2;
+}
+
+.chat-container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header */
+
+.chat-header {
+    height: 70px;
+    background: #075e54;
+    color: white;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 0 25px;
+}
+
+.chat-header h2 {
+    margin: 0;
+}
+
+.chat-header p {
+    margin: 4px 0 0;
+}
+
+.chat-header button {
+    background: white;
+    color: #075e54;
+
+    border: none;
+    padding: 10px 18px;
+
+    border-radius: 6px;
+
+    cursor: pointer;
+}
+
+/* Main */
+
+.chat-body {
+    flex: 1;
+    display: flex;
+}
+
+/* Users */
+
+.users-panel {
+    width: 300px;
+    background: white;
+    border-right: 1px solid #ddd;
+
+    overflow-y: auto;
+}
+
+.users-panel h3 {
+    padding: 15px;
+    margin: 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.user-item {
+    display: flex;
+    align-items: center;
+
+    padding: 15px;
+
+    cursor: pointer;
+
+    border-bottom: 1px solid #eee;
+}
+
+.user-item:hover {
+    background: #f5f5f5;
+}
+
+.user-item.selected {
+    background: #e8f5e9;
+}
+
+.user-item p {
+    margin: 4px 0 0;
+    color: #777;
+    font-size: 13px;
+}
+
+/* Avatar */
+
+.avatar {
+    width: 45px;
+    height: 45px;
+
+    border-radius: 50%;
+
+    background: #25d366;
+    color: white;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-weight: bold;
+
+    margin-right: 12px;
+}
+
+/* Conversation */
+
+.conversation {
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+
+    background: #efeae2;
+}
+
+.no-chat {
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    color: #555;
+}
+
+/* Conversation header */
+
+.conversation-header {
+    height: 65px;
+
+    background: white;
+
+    display: flex;
+    align-items: center;
+
+    padding: 10px 20px;
+
+    border-bottom: 1px solid #ddd;
+}
+
+.conversation-header h3 {
+    margin: 0;
+}
+
+.conversation-header p {
+    margin: 3px 0;
+    color: #25a244;
+}
+
+/* Messages */
+
+.messages {
+    flex: 1;
+
+    padding: 25px;
+
+    overflow-y: auto;
+}
+
+.message {
+    max-width: 60%;
+
+    padding: 10px 14px;
+
+    margin-bottom: 12px;
+
+    border-radius: 8px;
+}
+
+.message p {
+    margin: 0 0 5px;
+}
+
+.message span {
+    font-size: 11px;
+    color: #777;
+}
+
+.received {
+    background: white;
+    align-self: flex-start;
+}
+
+.sent {
+    background: #d9fdd3;
+    margin-left: auto;
+}
+
+/* Input */
+
+.message-input {
+    display: flex;
+
+    padding: 15px;
+
+    background: white;
+
+    border-top: 1px solid #ddd;
+}
+
+.message-input input {
+    flex: 1;
+
+    padding: 12px;
+
+    border: 1px solid #ddd;
+
+    border-radius: 6px;
+
+    font-size: 15px;
+
+    outline: none;
+}
+
+.message-input button {
+    margin-left: 10px;
+
+    padding: 12px 22px;
+
+    background: #25d366;
+
+    color: white;
+
+    border: none;
+
+    border-radius: 6px;
+
+    cursor: pointer;
+}
+
+/* Online/offline status */
+.presence {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin: 5px 0 0;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.presence.online {
+    color: #16a34a;
+}
+
+.presence.offline {
+    color: #777777;
+}
+
+.presence-dot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background-color: #888888;
+}
+
+.presence.online .presence-dot {
+    background-color: #16c765;
+}
+
+.presence.offline .presence-dot {
+    background-color: #888888;
+}
+
+.user-details {
+    min-width: 0;
+}
+
+.user-details .presence {
+    white-space: nowrap;
+}
+
+/* Typing indicator */
+.conversation-header .presence {
+    margin-top: 5px;
+    min-height: 18px;
+}
+
+.conversation-header .presence:not(.online):not(.offline) {
+    color: #0b9f55;
+    font-style: italic;
+}
